@@ -1,5 +1,5 @@
 import React from "react";
-import { hydrate } from "react-dom";
-const title = "React with Webpack and Babel";
+import ReactDOM from "react-dom";
+import { App } from "./app";
 
-hydrate(<div>{title}</div>, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById("app"));

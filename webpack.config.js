@@ -1,8 +1,7 @@
-const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.tsx",
-  devtool: "inline-source-map",
+  entry: ["./src/index.tsx"],
   module: {
     rules: [
       {
@@ -15,8 +14,8 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
-  output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
-  },
+  plugins: [
+    // Removes/cleans build folders and unused assets when rebuilding
+    new CleanWebpackPlugin(),
+  ],
 };
